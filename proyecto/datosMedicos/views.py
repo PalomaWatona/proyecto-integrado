@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from datosMedicos.models import DatosP
 
 def formulario02(request):
     return render(request, 'formularioHospital.html')
@@ -19,8 +20,29 @@ def procesado(request):
     fun = request.POST['funcionalidad']
     der = request.POST['derivacion']
     eva = request.POST['evaluacion']
+    ale = request.POST['Alergia']
+    mot = request.POST['MotivoConsulta']
+    fre = request.POST['frecuenciaC']
+    tem = request.POST['temperatura']
     
-    return render(request, 'procesado.html')
+    
+    dp = DatosP(
+        prevision = pre,
+        accidentelaboral = act,
+        genero = gen,
+        edad = eda,
+        comorbilidades = com,
+        funcionalidad = fun,
+        derivacion = der,
+        evaluacion = eva
+    )
+    
+    dp.save()
+    
+    datos = {'r':'Datos Enviados Correctamente'}
+    return render(request, 'procesado.html', datos)
+
+
 
 # Explicaciones:
 # Despues de enviar el formulario dirigir a la pagina de menu
@@ -35,4 +57,4 @@ def procesado(request):
 # Notificacion de Nuevos Formularios
 # Hacer Pagina del Menu
 # Tic de Formulario Visto
-#
+# Pagina para el Listado del formulario o para ver el formulario
