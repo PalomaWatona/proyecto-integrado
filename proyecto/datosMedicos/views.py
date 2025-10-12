@@ -13,26 +13,25 @@ def formulario(request):
 def procesado(request):
     #Variables que se usaran
     pre = request.POST['prevision']
-    act = request.POST['actlaboral']
     gen = request.POST['genero']
     eda = int(request.POST['edad'])
-    com = request.POST['comorbilidades']
-    fun = request.POST['funcionalidad']
     der = request.POST['derivacion']
     eva = request.POST['evaluacion']
     ale = request.POST['Alergia']
     mot = request.POST['MotivoConsulta']
     fre = request.POST['frecuenciaC']
     tem = request.POST['temperatura']
+    # Falta hacer Diabetes, tratamientos cronicos, signos vitales, licemia (azucar en sangre), precion arterial, temperatura rectar o axilar
+    #
+    # Se elimino la comorbilidad por que no se sabra si tiene otra enfermedad
+    # Cuando es translado de arta complejidad va con un prefecional acargo
+    # El hospital usa el sistema fonendo
     
     
     dp = DatosP(
         prevision = pre,
-        accidentelaboral = act,
         genero = gen,
         edad = eda,
-        comorbilidades = com,
-        funcionalidad = fun,
         derivacion = der,
         evaluacion = eva
     )
