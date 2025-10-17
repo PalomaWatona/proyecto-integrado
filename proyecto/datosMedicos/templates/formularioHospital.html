@@ -53,13 +53,11 @@
                     <form method="post" action="{% url 'procesado' %}">
                         {% csrf_token %}
                         
-                        <!-- Nombre del Paciente (NUEVO CAMPO) -->
                         <div class="input-group">
                             <label class="input-label">Nombre Del Paciente</label>
                             <input type="text" name="nombre_paciente" placeholder="Ingresa el Nombre y Apellido" maxlength="80" required>
                         </div>
                         
-                        <!-- Previsión (CORREGIDO: nombre="prevision") -->
                         <div class="input-group">
                             <label class="input-label">Previsión</label>
                             <div class="radio-group">
@@ -82,22 +80,6 @@
                             </div>
                         </div>
                         
-                        <!-- Accidente Laboral (CORREGIDO: nombre="actlaboral") -->
-                        <div class="input-group">
-                            <label class="input-label">Accidente Laboral</label>
-                            <div class="radio-group">
-                                <div class="radio-item">
-                                    <input type="radio" id="accidente_si" name="actlaboral" value="si" required>
-                                    <label for="accidente_si">Sí</label>
-                                </div>
-                                <div class="radio-item">
-                                    <input type="radio" id="accidente_no" name="actlaboral" value="no">
-                                    <label for="accidente_no">No</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Género (CORREGIDO: nombre="genero") -->
                         <div class="input-group">
                             <label class="input-label">Género</label>
                             <div class="radio-group">
@@ -109,79 +91,74 @@
                                     <input type="radio" id="femenino" name="genero" value="femenino">
                                     <label for="femenino">Femenino</label>
                                 </div>
-                                <div class="radio-item">
-                                    <input type="radio" id="otro" name="genero" value="otro">
-                                    <label for="otro">Otro</label>
-                                </div>
                             </div>
                         </div>
                         
-                        <!-- Edad (NUEVO CAMPO OBLIGATORIO) -->
                         <div class="input-group">
                             <label class="input-label">Edad</label>
                             <input type="number" name="edad" placeholder="Ingrese la edad" min="0" max="120" required>
                         </div>
                         
-                        <!-- Teléfono (CAMPO ADICIONAL) -->
+                        <!-- Teléfono -->
                         <div class="input-group">
                             <label class="input-label">Teléfono</label>
-                            <input type="tel" name="telefono" placeholder="Ingrese un teléfono (Ej: 912345678)">
+                            <input type="number" name="telefono" placeholder="Ingrese un teléfono (Ej: 912345678)" min="0" max="8" required>
                         </div>
                         
-                        <!-- Comorbilidades (NUEVO CAMPO OBLIGATORIO) -->
+                        <!-- Comorbilidades -->
                         <div class="input-group">
                             <label class="input-label">Comorbilidades</label>
                             <input type="text" name="comorbilidades" placeholder="Ingrese comorbilidades" required>
                         </div>
                         
-                        <!-- Funcionalidad (NUEVO CAMPO OBLIGATORIO) -->
+                        <!-- Funcionalidad -->
                         <div class="input-group">
                             <label class="input-label">Funcionalidad</label>
                             <input type="text" name="funcionalidad" placeholder="Ingrese funcionalidad" required>
                         </div>
                         
-                        <!-- Derivación (NUEVO CAMPO OBLIGATORIO) -->
+                        <!-- Derivación -->
                         <div class="input-group">
                             <label class="input-label">Derivación</label>
                             <input type="text" name="derivacion" placeholder="Ingrese derivación" required>
                         </div>
                         
-                        <!-- Evaluación (NUEVO CAMPO OBLIGATORIO) -->
+                        <!-- Evaluación -->
                         <div class="input-group">
                             <label class="input-label">Evaluación</label>
                             <input type="text" name="evaluacion" placeholder="Ingrese evaluación" required>
                         </div>
                         
-                        <!-- Alergia (NUEVO CAMPO) -->
+                        <!-- Alergia -->
                         <div class="input-group">
                             <label class="input-label">Alergia</label>
                             <input type="text" name="Alergia" placeholder="Ingrese alergias (opcional)">
                         </div>
                         
-                        <!-- Motivo de Consulta (NUEVO CAMPO) -->
+                        <!-- Motivo de Consulta -->
                         <div class="input-group">
                             <label class="input-label">Motivo de Consulta</label>
                             <input type="text" name="MotivoConsulta" placeholder="Ingrese motivo de consulta">
                         </div>
                         
-                        <!-- Frecuencia Cardiaca (NUEVO CAMPO) -->
+                        <!-- Frecuencia Cardiaca -->
                         <div class="input-group">
                             <label class="input-label">Frecuencia Cardiaca</label>
-                            <input type="text" name="frecuenciaC" placeholder="Ingrese frecuencia cardiaca">
+                            <input type="number" name="frecuenciaC" placeholder="Ingrese frecuencia cardiaca">
                         </div>
                         
-                        <!-- Temperatura (NUEVO CAMPO) -->
+                        <!-- Temperatura -->
                         <div class="input-group">
                             <label class="input-label">Temperatura</label>
-                            <input type="text" name="temperatura" placeholder="Ingrese temperatura">
+                            <input type="number" name="temperatura" placeholder="Ingrese temperatura">
                         </div>
                         
                         <!-- Observaciones -->
                         <div class="input-group">
                             <label class="input-label">Observaciones</label>
                             <div class="textarea-wrapper">
-                                <textarea name="observaciones" placeholder="Observaciones adicionales" maxlength="100"></textarea>
-                                <span class="char-counter">0 / 100</span>
+                                <textarea name="observaciones" placeholder="Observaciones adicionales" maxlength="500"></textarea>
+                                <span class="char-counter">0 / 500</span>
                             </div>
                         </div>
                         

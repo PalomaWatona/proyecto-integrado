@@ -1,4 +1,4 @@
-// {% load static %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="es">
@@ -20,40 +20,19 @@
         </div>
     </header>
 
-    <div class="layout">
-        <nav class="sidebar">
-            <div class="sidebar-content">
-                <!-- Enlace a Inicio (condicional basado en rol) -->
-                {% if user.is_staff %}  <!-- Muestra solo si el usuario es staff/admin -->
-                    <a href="/" class="nav-link active">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
-                            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
-                            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
-                        </svg>
-                        <span>Inicio</span>
-                    </a>
-                {% endif %}
-
-                <!-- Agrega más enlaces aquí según el rol o funciones -->
-                <!-- Ejemplo: {% if user.is_superuser %} <a href="/admin" class="nav-link">Admin</a> {% endif %} -->
-            </div>
-        </nav>
-
         <main class="main">
             <div class="main-content">
                 <div class="card-container">
-                    <!-- Tarjeta para OIRS -->
-                    <a href="https://oirs.minsal.cl/" target="_blank" class="card-link">
+                    <!-- Boton -->
+                    <a href="" target="_blank" class="card-link">
                         <div class="card">
-                            <div class="card-icon">
-                                <img src="https://api-pysu.hospitalrancagua.cl/storage/images/buttons-icons/oirs.png" alt="OIRS">
+                            <div class="col-md-2">
+                                <div class="card-title">Historial De Formularios</div>
                             </div>
-                            <div class="card-title">Formularios</div>
                         </div>
                     </a>
 
-                    <!-- Tarjeta para Hospital Amigo -->
+                    <!-- Boton -->
                     <a href="/inicio/pantalla-hospital-amigo" target="_self" class="card-link">
                         <div class="card">
                             <div class="card-icon">
@@ -63,7 +42,7 @@
                         </div>
                     </a>
 
-                    <!-- Tarjeta para Participación -->
+                    <!-- Boton -->
                     <a href="/inicio/oirs-participacion" target="_self" class="card-link">
                         <div class="card">
                             <div class="card-icon">
@@ -73,7 +52,7 @@
                         </div>
                     </a>
 
-                    <!-- Tarjeta para Atención Virtual -->
+                    <!-- Boton -->
                     <a href="https://m.me/HospitalDr.FRZ" target="_self" class="card-link">
                         <div class="card">
                             <div class="card-icon">
@@ -82,8 +61,6 @@
                             <div class="card-title">Historial De Acciones</div>
                         </div>
                     </a>
-
-
                 </div>
             </div>
         </main>

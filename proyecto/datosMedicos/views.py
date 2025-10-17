@@ -14,8 +14,8 @@ def login(request):
             request.session['usuario_nombre'] = usuario.nombre
             request.session['rol_nombre'] = usuario.rol.nombre
             
-            if usuario.rol.nombre == 'supervisor':
-                return redirect('menu_supervisor')
+            if usuario.rol.nombre == 'cordinador':
+                return redirect('menu_cordinador')
             elif usuario.rol.nombre == 'medico':
                 return redirect('menu_medico')
             elif usuario.rol.nombre == 'paramedico':
@@ -29,23 +29,24 @@ def login(request):
     
     return render(request, 'login.html')
 
-def menu_supervisor(request):
+def menu_cordinador(request):
     if 'usuario_id' not in request.session:
         return redirect('login')
     
     # Verificar que sea supervisor
-    if request.session.get('rol_nombre') != 'supervisor':
+    if request.session.get('rol_nombre') != 'cordinador':
         return redirect('menu')
     
-    return render(request, 'menu_supervisor.html')
+    return render(request, 'menu_cordinador.html')
 
 def menu_default(request):
-    if 'usuario_id' not in request.session:
-        return redirect('login')
+    #if 'usuario_id' not in request.session:
+    #    return redirect('login')
     
     # Verificar que sea paramedico
-    if request.session.get('rol_nombre') != 'admin':
-        return redirect('menu')
+    #if request.session.get('rol_nombre') != 'admin':
+    #    return redirect('menu')
+    return render(request, 'menu.html')
 
 def menu_paramedico(request):
     if 'usuario_id' not in request.session:
@@ -75,14 +76,14 @@ def logout_view(request):
 
 def formulario(request):
     # Si el Usuario no esta login entonces lo redirige a la pagina de login
-    if 'usuario_rut' not in request.session:
-        return redirect('login')
+    # if 'usuario_rut' not in request.session:
+    #     return redirect('login')
     
-    try:
-        usuario = Usuario.objects.get(rut=request.session['usuario_rut'])
-    except Usuario.DoesNotExist:
-        request.session.flush()
-        return redirect('login')
+    # try:
+    #     usuario = Usuario.objects.get(rut=request.session['usuario_rut'])
+    # except Usuario.DoesNotExist:
+    #     request.session.flush()
+    #     return redirect('login')
     
     return render(request, 'formularioHospital.html')
 
@@ -97,19 +98,22 @@ def procesado(request):
     eda = int(request.POST['edad'])
     der = request.POST['derivacion']
     eva = request.POST['evaluacion']
+    ale = request.POST['Alergia']
+    fre = request.POST['frecuenciaCardiaca']
     
     # Algunos de los siguientes datos se agregan en el hospital o despues
-    ale = request.POST['Alergia']
+    rut = request.POST['rut']
+    nom = request.POST['nombre']
     mot = request.POST['motivoConsulta']
-    fre = request.POST['frecuenciaC']
     vit = request.POST['signosVitales']
     tem = request.POST['temperatura']
-    dia = request.POST['diabetes']
-    lic = request.POST['azucarS']
+    lic = request.POST['azucarEnSangre'] #Azucar En Sangre, solo se vea si es Diabetico
     art = request.POST['precionArterial']
+    san = request.POST['tipoDeSangre']
+    cro = request.POST['tratamientoCronico']
+    tel = request.POST['telefono']
     
-    # Falta hacer Diabetes, tratamientos cronicos, signos vitales, licemia (azucar en sangre), precion arterial, temperatura rectar o axilar (opcion)
-    #
+    # tratamientos cronicos,temperatura rectar o axilar (opcion)
     # Se elimino la comorbilidad por que no se sabra si tiene otra enfermedad
     # Cuando es translado de arta complejidad va con un profesional acargo
     # El hospital usa el sistema fonendo
@@ -131,17 +135,23 @@ def procesado(request):
 
 #----------------------------------| Pendientes |---------------------------------------
 
-# Explicaciones:
+# ----- Explicaciones -----
 # Despues de enviar el formulario dirigir a la pagina de menu
 #
 
-# Por hacer (General): 
+# ----- Por hacer (General) -----
 # Boton para imprimir y descargar en formato excel
 # Que se pueda ver la hora de envio del formulario y que la persona vio la ficha
-# Crear 3 lineas para aparecer y esconder Inicio y Formulario
-# Crear Historial de Formularios
-# Crear Historial de Login
+# Crear Boton de 3 lineas para aparecer y esconder Inicio y Formulario
+# Crear Pagina Historial de Formularios
+# Crear Pagina Historial de Acciones (Login, Envio de Formularios)
+# Crear Pagina Menu para el Paramedico 
+# Crear Pagina Menu para el Medico
 # Notificacion de Nuevos Formularios
-# Hacer Pagina del Menu
 # Tic de Formulario Visto
 # Pagina para el Listado del formulario o para ver el formulario
+# Boton Logout
+# Boton Ver Perfil y Pagina del perfil de Usuario
+# Poner Diabetes y Hypertension como opciones (Comorbilidades mas comunes)
+# Funciona para Encriptar Contraseñas
+# Avisos de Error de Envio
