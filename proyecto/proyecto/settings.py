@@ -22,14 +22,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-x(%8ajnn5-8^@6a5&u92l$j4r(@ia!m$edrf(mjc^w81tkpx8$'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
+# Esto te muestra los errores en la pagina y si se pone en false no se muestran
+DEBUG = True 
+
+
+# Aqui se puede poner la ip del pc o del table y carga el proyecto sin internet pero en la misma red 
+# Ejemplo: ALLOWED_HOSTS = ['192.168.0.17]
 ALLOWED_HOSTS = []
 
 
-# Application definition
+# Si queremos testear en un dispositivo tenemos incluir este comando
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
+
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -103,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
 
 TIME_ZONE = 'UTC'
 
