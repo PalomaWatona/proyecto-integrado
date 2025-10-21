@@ -1,101 +1,249 @@
-<html>
+{% load static %}
 
-<head></head>
-
-<body style="cursor: auto;">
-    <div>
-        <div style="box-sizing:border-box;">
-            <header style="height:80px;min-height:80px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';top:0px;left:0px;right:0px;z-index:100;max-height:80px;position:fixed;box-sizing:border-box;background-color:rgb(255, 255, 255);border-bottom:0.8px solid rgb(233, 236, 239);padding:16px;">
-                <div style="display: flex; align-items: center; height: 100%;align-items:center;height:47.2px;">
-                    <button type="button" style="display:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';border:0px none rgb(0, 0, 0);appearance:none;font-size:16px;background-color:rgba(0, 0, 0, 0);text-align:left;color:rgb(0, 0, 0);text-decoration:rgb(0, 0, 0);box-sizing:border-box;border-radius:4px;width: calc(1.75rem);height:28px;padding:5px;cursor:pointer;margin-right:24px;">
-                        <div data-opened="true" style="background-color:rgba(0, 0, 0, 0);display:block;width: 1.125rem;height:1.5px;outline:rgba(0, 0, 0, 0) solid 0.8px;transition-property:background-color, transform;transition-duration:0.3s;position:relative;user-select:none;box-sizing:border-box;"></div>
-                    </button>
-                    <div style="box-sizing:border-box;display:flex;flex-flow:row wrap;-webkit-box-align:center;align-items:center;-webkit-box-pack:start;justify-content:flex-start;gap:16px;">
-                        <div style="width: 100%;max-width:300px;box-sizing:border-box;-webkit-box-flex:0;flex-grow:0;">
-                            <figure style="margin:0px;">
-                                <div style="position:relative;">
-                                    <h1 style="-webkit-tap-highlight-color:rgba(0, 0, 0, 0);color:rgb(0, 0, 0);text-decoration:rgb(0, 0, 0);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';font-weight:700;font-size:34px;line-height:44.2px;margin:0px;">Hospital Rancagua</h1>
-                                </div>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <div style="display:flex;box-sizing:border-box;">
-                <nav style="width: 18.75rem;min-width:300px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';top:80px;left:0px;bottom:0px;z-index:100;height:655.2px;position:fixed;box-sizing:border-box;display:flex;flex-direction:column;background-color:rgb(255, 255, 255);border-right:0.8px solid rgb(233, 236, 239);padding:16px;">
-                    <div style="flex:1 1 0%;box-sizing:border-box;">
-                        <div><a href="/" style="-webkit-tap-highlight-color:rgba(0, 0, 0, 0);display:flex;-webkit-box-align:center;align-items:center;text-decoration:rgb(73, 80, 87);font-size:14px;color:rgb(73, 80, 87);padding:10px 12px;border-radius:4px;font-weight:500;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:rgb(134, 142, 150);margin-right:12px;">
-                                <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
-                                <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
-                                <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
-                            </svg>
-                            <span>Inicio</span>
-                        </a>
-                    </div>
-                    <div><a href="/reservas" style="color:rgb(83, 150, 143);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);display:flex;-webkit-box-align:center;align-items:center;text-decoration:rgb(83, 150, 143);font-size:14px;padding:10px 12px;border-radius:4px;font-weight:500;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:rgb(83, 150, 143);margin-right:12px;">
-                            <path d="M9 20h6"></path>
-                            <path d="M12 14v6"></path>
-                            <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
-                            <path d="M9 9h6"></path>
-                        </svg><span>Formulario</span>
-                    </a>
-                </div>
-            </div>
-            <div style="padding-top:16px;margin-top:16px;-webkit-box-pack:center;justify-content:center;display:flex;flex-direction:column;-webkit-box-align:center;align-items:center;border-top:0.8px solid rgb(233, 236, 239);flex:0 1 0%;box-sizing:border-box;">
-                        <div style="width: 14.375rem;margin-right: auto;margin-left: auto;">
-                            <figure style="margin:0px;">
-                                <div style="position:relative;"></div>
-                            </figure>
-                        </div>
-                    </div>
-                </nav>
-                <main style="flex:1 1 0%;width: 100vw;box-sizing:border-box;min-height:735.2px;padding-top:96px;padding-bottom:16px;padding-left:316px;padding-right:416px;background:rgb(248, 249, 250) none repeat scroll 0% 0% / auto padding-box border-box;">
-                    <div>
-                        <div>
-                            <div style="outline:rgb(0, 0, 0) none 0px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);display:block;text-decoration:rgb(0, 0, 0);color:rgb(0, 0, 0);background-color:rgb(255, 255, 255);box-sizing:border-box;border-radius:4px;box-shadow:rgba(0, 0, 0, 0.05) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;padding:16px;">
-                                <h1 style="-webkit-tap-highlight-color:rgba(0, 0, 0, 0);color:rgb(0, 0, 0);text-decoration:rgb(0, 0, 0);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';font-weight:700;font-size:34px;line-height:44.2px;margin:0px;">Formulario</h1>
-                                <div style="font-weight: 600; margin-top: 20px; margin-bottom: 5px;margin-top:20px;margin-bottom:5px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';-webkit-tap-highlight-color:rgba(0, 0, 0, 0);color:rgb(0, 0, 0);font-size:16px;line-height:24.8px;text-decoration:rgb(0, 0, 0);">Nombre Del Paciente</div>
-                                <input placeholder="Ingresa el Nombre y Apellido" type="text" maxlength="80" value="" style="background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-width:0.8px;border-style:solid;border-color:rgb(217, 217, 217);text-overflow:ellipsis;box-sizing:border-box;margin:0px;padding:4px 11px;color:rgba(0, 0, 0, 0.88);font-size:14px;line-height:22px;list-style:outside none none;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';position:relative;display:inline-block;width: 100%;min-width:0px;border-radius:6px;transition:0.2s;" />
-                                <div style="font-weight: 600; margin-top: 20px; margin-bottom: 5px;margin-top:20px;margin-bottom:5px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';-webkit-tap-highlight-color:rgba(0, 0, 0, 0);color:rgb(0, 0, 0);font-size:16px;line-height:24.8px;text-decoration:rgb(0, 0, 0);">Prevision</div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="prevision" id="fona" value="fonasa" >
-                                        <label class="form-check-label" for="fonasa">Fonasa</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="prevision" id="isap" value="isapre">
-                                        <label class="form-check-label" for="isapre">Isapre</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="prevision" id="dipr" value="dipreca">
-                                        <label class="form-check-label" for="dipreca">Dipreca</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="prevision" id="part" value="particular">
-                                        <label class="form-check-label" for="particular">Particular</label>
-                                    </div>
-                                <div style="font-weight: 600; margin-top: 20px; margin-bottom: 5px;margin-top:20px;margin-bottom:5px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';-webkit-tap-highlight-color:rgba(0, 0, 0, 0);color:rgb(0, 0, 0);font-size:16px;line-height:24.8px;text-decoration:rgb(0, 0, 0);">Accidente Laboral</div>
-                                <input placeholder="Ingrese nombre y apellido" type="email" maxlength="80" value="" style="background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-width:0.8px;border-style:solid;border-color:rgb(217, 217, 217);text-overflow:ellipsis;box-sizing:border-box;margin:0px;padding:4px 11px;color:rgba(0, 0, 0, 0.88);font-size:14px;line-height:22px;list-style:outside none none;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';position:relative;display:inline-block;width: 100%;min-width:0px;border-radius:6px;transition:0.2s;" />
-                                <div style="font-weight: 600; margin-top: 20px; margin-bottom: 5px;margin-top:20px;margin-bottom:5px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';-webkit-tap-highlight-color:rgba(0, 0, 0, 0);color:rgb(0, 0, 0);font-size:16px;line-height:24.8px;text-decoration:rgb(0, 0, 0);">Genero</div>
-                                <input placeholder="Ingrese un correo" type="email" maxlength="80" value="" style="background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-width:0.8px;border-style:solid;border-color:rgb(217, 217, 217);text-overflow:ellipsis;box-sizing:border-box;margin:0px;padding:4px 11px;color:rgba(0, 0, 0, 0.88);font-size:14px;line-height:22px;list-style:outside none none;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';position:relative;display:inline-block;width: 100%;min-width:0px;border-radius:6px;transition:0.2s;" />
-                                <div style="font-weight: 600; margin-top: 20px; margin-bottom: 5px;margin-top:20px;margin-bottom:5px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';-webkit-tap-highlight-color:rgba(0, 0, 0, 0);color:rgb(0, 0, 0);font-size:16px;line-height:24.8px;text-decoration:rgb(0, 0, 0);">Teléfono</div>
-                                <input placeholder="Ingrese un teléfono (Ej: 912345678)" type="number" value="" style="background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-width:0.8px;border-style:solid;border-color:rgb(217, 217, 217);text-overflow:ellipsis;box-sizing:border-box;margin:0px;padding:4px 11px;color:rgba(0, 0, 0, 0.88);font-size:14px;line-height:22px;list-style:outside none none;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';position:relative;display:inline-block;width: 100%;min-width:0px;border-radius:6px;transition:0.2s;" />
-                                <div style="font-weight: 600; margin-top: 20px; margin-bottom: 5px;margin-top:20px;margin-bottom:5px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';-webkit-tap-highlight-color:rgba(0, 0, 0, 0);color:rgb(0, 0, 0);font-size:16px;line-height:24.8px;text-decoration:rgb(0, 0, 0);">Observaciones</div>
-                                <span data-count="0 / 100" style="height: 120px; resize: none;resize:none;position:relative;display:inline-flex;width: 100%;min-width:0px;padding:0px;color:rgba(0, 0, 0, 0.88);font-size:14px;line-height:22px;border-radius:6px;transition:0.2s;background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-width:0.8px;border-style:solid;border-color:rgb(217, 217, 217);box-sizing:border-box;">
-                                    <textarea placeholder="Opcional" maxlength="100" style="resize: none;font-size:14px;border:0px none rgba(0, 0, 0, 0.88);border-radius:0px;outline:rgba(0, 0, 0, 0.88) none 0px;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;color:rgba(0, 0, 0, 0.88);height:118.4px;max-width:100%;min-height:32px;line-height:22px;vertical-align:bottom;transition:0.3s, height;text-overflow:ellipsis;box-sizing:border-box;margin:0px;padding:4px 11px;list-style:outside none none;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';position:relative;display:block;width: 100%;min-width:0px;"></textarea>
-                                    <span style="margin-inline-start:0px;display:flex;flex: 0 0 auto;align-items:center;box-sizing:border-box;"><span style="position:absolute;bottom:-22px;inset-inline-end:0px;color:rgba(0, 0, 0, 0.45);white-space:nowrap;pointer-events:none;box-sizing:border-box;">0 / 100</span>
-                                </span>
-                            </span>
-                            <button type="button" style="width: 100%; margin-bottom: 25px; background-color: rgb(83, 150, 143); color: white; margin-top: 20px;margin-bottom:25px;background-color:rgb(83, 150, 143);color:rgb(255, 255, 255);margin-top:20px;background:rgb(83, 150, 143) none repeat scroll 0% 0% / auto padding-box border-box;border-color:rgb(217, 217, 217);box-shadow:rgba(0, 0, 0, 0.02) 0px 2px 0px 0px;font-size:14px;line-height:22px;height:32px;padding:4px 15px;border-radius:6px;outline:rgb(255, 255, 255) none 0px;position:relative;display:inline-flex;gap:8px;align-items:center;justify-content:center;font-weight:400;white-space:nowrap;text-align:center;border:0.8px solid rgb(217, 217, 217);cursor:pointer;transition:0.2s cubic-bezier(0.645, 0.045, 0.355, 1);user-select:none;touch-action:manipulation;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';box-sizing:border-box;">
-                                <span style="display:block;">Enviar</span></button>
-                            </div>
-                        </div>
-                    </div>
-                </main>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario - Hospital Rancagua</title>
+    <link rel="stylesheet" href="{% static 'formularioH.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <button type="button" class="menu-toggle" style="display: none;">
+                <div class="menu-line"></div>
+            </button>
+            <div class="logo-section">
+                <h1>Hospital Rancagua</h1>
             </div>
         </div>
-    </div>
-</body>
+    </header>
 
+    <div class="layout">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <a href="/" class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
+                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+                    </svg>
+                    <span>Inicio</span>
+                </a>
+                <a href="{% url 'formulario' %}" class="nav-link active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 20h6"></path>
+                        <path d="M12 14v6"></path>
+                        <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+                        <path d="M9 9h6"></path>
+                    </svg>
+                    <span>Formulario</span>
+                </a>
+            </div>
+            <div class="sidebar-footer">
+            </div>
+        </nav>
+
+        <main class="main">
+            <div class="form-container">
+                <div class="form-card">
+                    <h1>Formulario</h1>
+                    
+                    <form method="post" action="{% url 'procesado' %}">
+                        {% csrf_token %}
+
+                        <div class="input-group">
+                            <label class="input-label">Nombre Del Paciente</label>
+                            <input type="text" name="nombre" placeholder="Ingresa el Nombre y Apellido" maxlength="80" required>
+
+                        </div>
+                        
+                        <!-- Genero -->
+                        <div class="input-group">
+                            <label class="input-label">Género</label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="masculino" name="genero" value="masculino" required>
+                                    <label for="masculino">Masculino</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="femenino" name="genero" value="femenino">
+                                    <label for="femenino">Femenino</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Edad -->
+                        <div class="input-group">
+                            <label class="input-label">Edad</label>
+                            <input type="number" name="edad" placeholder="Ingrese la edad Aproximada" min="0" max="120" required>
+                        </div>
+
+                        <!-- Frecuencia Cardiaca -->
+                        <div class="input-group">
+                            <label class="input-label">Frecuencia Cardiaca</label>
+                            <input type="number" name="frecuenciaCardiaca" placeholder="Ingrese frecuencia cardiaca">
+                        </div>
+
+                        <!-- Signos Vitales -->
+                        <div class="input-group">
+                            <label class="input-label">Signos Vitales</label>
+                            <input type="text" name="signosVitales" placeholder="Ej: presión, pulso, etc.">
+                        </div>
+
+                        <!-- Presion Arterial -->
+                        <div class="input-group">
+                            <label class="input-label">Presión Arterial</label>
+                            <input type="text" name="precionArterial" placeholder="Ej: 120/80">
+                        </div>
+
+                        <!-- Temperatura -->
+                        <div class="input-group">
+                            <label class="input-label">Temperatura</label>
+                            <input type="number" name="temperatura" placeholder="Ingrese temperatura">
+                        </div>
+
+                        <!-- Alergia -->
+                        <div class="input-group">
+                            <label class="input-label">Alergia</label>
+                            <input type="text" name="Alergia" placeholder="Ingrese alergias (opcional) ">
+                        </div>
+
+                        <!-- Comorbilidades -->
+                        <div class="input-group"> 
+                            <label class="input-label">Comorbilidades</label> 
+                            <input type="text" name="comorbilidades" placeholder="Ingrese comorbilidades" required> 
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Previsión</label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="fonasa" name="prevision" value="fonasa" required>
+                                    <label for="fonasa">Fonasa</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="isapre" name="prevision" value="isapre">
+                                    <label for="isapre">Isapre</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="dipreca" name="prevision" value="dipreca">
+                                    <label for="dipreca">Dipreca</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="particular" name="prevision" value="particular">
+                                    <label for="particular">Particular</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rut  -->
+                        <div class="input-group">
+                            <label class="input-label">RUT</label>
+                            <input type="text" name="rut" id="rut" placeholder="12.345.678-K" required maxlength="12">
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Azúcar en Sangre</label>
+                            <input type="number" name="azucarEnSangre" placeholder="Solo si es diabético">
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Presión Arterial</label>
+                            <input type="text" name="precionArterial" placeholder="Ej: 120/80">
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Tipo de Sangre</label>
+                            <input type="text" name="tipoDeSangre" placeholder="Ej: O+, A-, AB+">
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Tratamiento Crónico</label>
+                            <input type="text" name="tratamientoCronico" placeholder="Ej: hipertensión, diabetes, etc.">
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="input-group">
+                            <label class="input-label">Teléfono</label>
+                            <input type="number" name="telefono" placeholder="Ingrese un teléfono (Ej: 912345678)" min="0" max="8" required>
+                        </div>
+                        
+                        <!-- Funcionalidad -->
+                        <div class="input-group">
+                            <label class="input-label">Funcionalidad</label>
+                            <input type="text" name="funcionalidad" placeholder="Ingrese funcionalidad" required>
+                        </div>
+                        
+                        <!-- Derivación -->
+                        <div class="input-group">
+                            <label class="input-label">Derivación</label>
+                            <input type="text" name="derivacion" placeholder="Ingrese derivación" required>
+                        </div>
+                        
+                        <!-- Evaluación -->
+                        <div class="input-group">
+                            <label class="input-label">Evaluación</label>
+                            <input type="text" name="evaluacion" placeholder="Ingrese evaluación" required>
+                        </div>
+                        
+                        <!-- Motivo de Consulta -->
+                        <div class="input-group">
+                            <label class="input-label">Motivo de Consulta</label>
+                            <input type="text" name="MotivoConsulta" placeholder="Ingrese motivo de consulta">
+                        </div>
+                        
+                        <!-- Observaciones -->
+                        <div class="input-group">
+                            <label class="input-label">Observaciones</label>
+                            <div class="textarea-wrapper">
+                                <textarea name="observaciones" placeholder="Observaciones adicionales" maxlength="500"></textarea>
+                                <span class="char-counter">0 / 500</span>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span>Enviar</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script Para las observaciones -->
+    <script>
+        const textarea = document.querySelector('textarea[name="observaciones"]');
+        const counter = document.querySelector('.char-counter');
+        if (textarea && counter) {
+            textarea.addEventListener('input', function() {
+                const length = this.value.length;
+                counter.textContent = `${length} / 100`;
+            });
+        }
+    </script>
+    
+    <!-- Script Para el Rut -->
+    <script>
+        document.getElementById('rut').addEventListener('input', function(e) {
+            let raw = e.target.value
+                .replace(/\./g, '')
+                .replace(/-/g, '')
+                .replace(/[^0-9kK]/g, '')
+                .toUpperCase();
+
+            if (raw.length > 1) {
+                let cuerpo = raw.slice(0, -1);
+                let dv = raw.slice(-1);
+                cuerpo = cuerpo.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                e.target.value = `${cuerpo}-${dv}`;
+            } else {
+                e.target.value = raw;
+            }
+        });
+    </script>
+
+
+</body>
 </html>
