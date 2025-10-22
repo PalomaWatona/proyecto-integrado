@@ -78,8 +78,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'bd_fichashospital',
         'USER' : 'root',
-        'PORT' : 3307,
-        'PASSWORD' : 'inacap',
+        'PORT' : 3306,
+        'PASSWORD' : '',
     }
 }
 
