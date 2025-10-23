@@ -105,7 +105,6 @@ def procesado(request):
     rut = request.POST['rut']
     nom = request.POST['nombre']
     mot = request.POST['motivoConsulta']
-    vit = request.POST['signosVitales']
     tem = request.POST['temperatura']
     lic = request.POST['azucarEnSangre'] #Azucar En Sangre, solo se vea si es Diabetico
     art = request.POST['precionArterial']
