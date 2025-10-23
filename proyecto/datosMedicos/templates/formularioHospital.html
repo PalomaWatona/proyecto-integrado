@@ -150,9 +150,9 @@
                         <!-- Temperatura -->
                         <div class="input-group">
                             <label class="input-label">Temperatura</label>
-                            <input type="number" name="temperatura" placeholder="Ingrese temperatura">
+                            <input type="text" name="temperatura" id="temperatura" placeholder="36°C" class="temperature-input" required>
                         </div>
-                        
+                                                
                         <!-- Observaciones -->
                         <div class="input-group">
                             <label class="input-label">Observaciones</label>
@@ -171,15 +171,58 @@
         </main>
     </div>
 
+    <!-- Observaciones -->
     <script>
         const textarea = document.querySelector('textarea[name="observaciones"]');
         const counter = document.querySelector('.char-counter');
         if (textarea && counter) {
             textarea.addEventListener('input', function() {
                 const length = this.value.length;
-                counter.textContent = `${length} / 100`;
+                counter.textContent = `${length} / 500`;
             });
         }
     </script>
+    
+    <!-- Temperatura -->
+    <script>
+        const tempInput = document.getElementById('temperatura');
+            // Función principal de entrada
+            tempInput.addEventListener('input', function() {
+                let value = this.value;
+                if (value === '°C') { this.value = ''; return; }
+                
+                let numbers = value.replace(/\D/g, '').slice(0, 2);
+                const numValue = parseInt(numbers || 0);
+                const isValid = numValue >= 0 && numValue <= 60;
+                
+                this.style.borderColor = isValid ? '#d9d9d9' : 'red';
+                this.style.backgroundColor = isValid ? 'white' : '#fff5f5';
+                this.value = numbers ? numbers + '°C' : '';
+                if (numbers) this.setSelectionRange(numbers.length, numbers.length);
+            });
+
+            // Manejo de cursor y teclas
+            const handleCursor = function(e) {
+                const numbers = this.value.replace('°C', '');
+                
+                if (e.type === 'keydown') {
+                    if (e.key === 'Backspace' && this.value === '°C') {
+                        this.value = ''; 
+                        e.preventDefault();
+                    }
+                    if (e.key === 'Delete' && this.selectionStart >= numbers.length) {
+                        e.preventDefault();
+                    }
+                } else if (this.selectionStart > numbers.length) {
+                    this.setSelectionRange(numbers.length, numbers.length);
+                }
+            };
+
+            // Aplicar a múltiples eventos
+            ['keydown', 'click', 'focus'].forEach(event => {
+                tempInput.addEventListener(event, handleCursor);
+            });
+    </script>
+
 </body>
 </html>
