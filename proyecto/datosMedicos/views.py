@@ -97,17 +97,14 @@ def procesado(request):
     gen = request.POST['genero']
     eda = int(request.POST['edad'])
     der = request.POST['derivacion']
-    eva = request.POST['evaluacion']
     ale = request.POST['Alergia']
     fre = request.POST['frecuenciaCardiaca']
+    art = request.POST['precionArterial']
     
     # Algunos de los siguientes datos se agregan en el hospital o despues
     rut = request.POST['rut']
     nom = request.POST['nombre']
-    mot = request.POST['motivoConsulta']
     tem = request.POST['temperatura']
-    lic = request.POST['azucarEnSangre'] #Azucar En Sangre, solo se vea si es Diabetico
-    art = request.POST['precionArterial']
     san = request.POST['tipoDeSangre']
     cro = request.POST['tratamientoCronico']
     tel = request.POST['telefono']
@@ -123,7 +120,6 @@ def procesado(request):
         genero = gen,
         edad = eda,
         derivacion = der,
-        evaluacion = eva
     )
     
     dp.save()
