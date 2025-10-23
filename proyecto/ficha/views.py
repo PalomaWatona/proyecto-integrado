@@ -35,7 +35,7 @@ def menu(request):
 def iniciarSesion(request):
     if request.method == 'POST':
         rut = request.POST['rut']
-        con = request.POST['contraseña']
+        con = request.POST['password']
         has = hashlib.md5(con.encode('utf-8')).hexdigest()
         try:
             usuario = Usuario.objects.get(rut=rut, contraseña=has)
@@ -59,6 +59,4 @@ def cerrarSesion(request):
     request.session.pop('userid', None)
     request.session.pop('rol', None)
     request.session.flush()
-
-    datos = {'r': 'Sesion cerrada correctamente!'}
-    return render(request, 'login.html', datos)
+    return redirect('login')
