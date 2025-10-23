@@ -15,7 +15,7 @@ def menu(request):
     userid = request.session.get('userid')
     if not userid:
         datos = {'r': 'Debe iniciar sesión para ingresar al menú'}
-        return redirect('login')  # login view will show datos if needed
+        return redirect('login')
 
     usuario = get_object_or_404(Usuario, pk=userid)
     datos = {'usuario': usuario}
@@ -23,34 +23,34 @@ def menu(request):
     rol = (usuario.rol or '').lower()
     if rol == 'admin':
         return render(request, 'menuA.html', datos)
-    elif rol == 'operador':
+    elif rol == 'coordinador':
+        return render(request, 'menuB.html', datos)
+    elif rol == 'paramedico':
         return render(request, 'menuB.html', datos)
     else:
         datos = {'r': 'Rol no autorizado'}
-        return render(request, 'index.html', datos)
+        return render(request, 'login.html', datos)
 
 
 def iniciarSesion(request):
     if request.method == 'POST':
-        nom = request.POST['nombre']
+        rut = request.POST['rut']
         con = request.POST['contraseña']
         has = hashlib.md5(con.encode('utf-8')).hexdigest()
         try:
-            usuario = Usuario.objects.get(nombre=nom, contraseña=has)
+            usuario = Usuario.objects.get(rut=rut, contraseña=has)
         except Usuario.DoesNotExist:
             datos = {'r': 'Error en el usuario y/o contraseña'}
-            return render(request, 'index.html', datos)
+            return render(request, 'login.html', datos)
 
         request.session['estadoSesion'] = True
         request.session['username'] = usuario.nombre.upper()
         request.session['userid'] = usuario.id
         request.session['rol'] = (usuario.rol or '').upper()
 
-        # Redirect to menu (URL named 'menu'); menu() will fetch the usuario and render proper template
         return redirect('menu')
     else:
-        datos = {'r': 'Error en el envio de los datos'}
-        return render(request, 'index.html', datos)
+        return render(request, 'login.html')
 
 
 def cerrarSesion(request):
@@ -61,4 +61,4 @@ def cerrarSesion(request):
     request.session.flush()
 
     datos = {'r': 'Sesion cerrada correctamente!'}
-    return render(request, 'index.html', datos)
+    return render(request, 'login.html', datos)

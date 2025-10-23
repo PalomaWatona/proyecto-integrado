@@ -7,6 +7,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.redir, name='redirect'),
     path('menu/', views.menu, name='menu'),
-    path('login/', views.iniciarSesion),
-    path('logout/', views.cerrarSesion),
+    path('login/', views.iniciarSesion, name='login'),
+    path('logout/', views.cerrarSesion, name='logout'),
 ]
