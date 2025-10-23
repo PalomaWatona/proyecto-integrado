@@ -5,7 +5,8 @@
      align-items: center;
      gap: 24px;
      flex-wrap: wrap;
-     margin: 0 auto;            
+     margin-top: 40px;
+     margin-inline: 0px auto;            
      width: 100%;
  }
 
@@ -23,13 +24,19 @@
     border: none;
     border-radius: 8px;
     outline: 1px solid #dadada;
-    font-size: 14px;
+    text-decoration: none;
     transition: box-shadow 0.3s ease;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 12px;
 }
 
 .menu-button:hover {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 12px;
+}
+
+.menu-text {
+    margin-top: 12px;
+    font-weight: 400;
+    font-size: 16px;
 }
 
 .menu-icon {

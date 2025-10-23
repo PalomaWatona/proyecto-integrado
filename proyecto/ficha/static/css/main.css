@@ -75,6 +75,7 @@ main{
     border-radius: 10px 10px 0 0;
     padding-inline: 100px;
     padding-block: 40px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
 }
 
 @media (max-width: 600px) {

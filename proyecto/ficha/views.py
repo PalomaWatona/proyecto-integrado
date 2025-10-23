@@ -22,11 +22,11 @@ def menu(request):
 
     rol = (usuario.rol or '').lower()
     if rol == 'admin':
-        return render(request, 'menuA.html', datos)
+        return render(request, 'menu_Admin.html', datos)
     elif rol == 'coordinador':
-        return render(request, 'menuB.html', datos)
+        return render(request, 'menu_Coordinador.html', datos)
     elif rol == 'paramedico':
-        return render(request, 'menuB.html', datos)
+        return render(request, 'menu_Paramedico.html', datos)
     else:
         datos = {'r': 'Rol no autorizado'}
         return render(request, 'login.html', datos)
@@ -60,3 +60,25 @@ def cerrarSesion(request):
     request.session.pop('rol', None)
     request.session.flush()
     return redirect('login')
+
+def formulario(request):
+    userid = request.session.get('userid')
+    if not userid:
+        datos = {'r': 'Debe iniciar sesión para ingresar al formulario'}
+        return redirect('login')
+
+    usuario = get_object_or_404(Usuario, pk=userid)
+    datos = {'usuario': usuario}
+
+    return render(request, 'formulario.html', datos)
+
+def listado(request):
+    userid = request.session.get('userid')
+    if not userid:
+        datos = {'r': 'Debe iniciar sesión para ingresar al listado'}
+        return redirect('login')
+
+    usuario = get_object_or_404(Usuario, pk=userid)
+    datos = {'usuario': usuario}
+
+    return render(request, 'Listado.html', datos)
