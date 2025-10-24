@@ -24,7 +24,6 @@ def login(request):
                 return redirect('menu_default')
 
         except Usuario.DoesNotExist:
-            # Mensaje de Usuario no encontrado
             return render(request, 'login.html', {'error': 'RUT o contraseña incorrectos'})
     
     return render(request, 'login.html')
@@ -58,7 +57,6 @@ def menu_paramedico(request):
 
 
 def sesion(request):
-    # Datos de Sesion
     usuario_rut = request.session.get('usuario_rut')
     usuario_nombre = request.session.get('usuario_nombre')
     
@@ -109,12 +107,6 @@ def procesado(request):
     cro = request.POST['tratamientoCronico']
     tel = request.POST['telefono']
     
-    # tratamientos cronicos,temperatura rectar o axilar (opcion)
-    # Se elimino la comorbilidad por que no se sabra si tiene otra enfermedad
-    # Cuando es translado de arta complejidad va con un profesional acargo
-    # El hospital usa el sistema fonendo
-    
-    
     dp = DatosPaciente(
         prevision = pre,
         genero = gen,
@@ -126,27 +118,3 @@ def procesado(request):
     
     datos = {'r':'Datos Enviados Correctamente'}
     return render(request, 'procesado.html', datos)
-
-
-#----------------------------------| Pendientes |---------------------------------------
-
-# ----- Explicaciones -----
-# Despues de enviar el formulario dirigir a la pagina de menu
-#
-
-# ----- Por hacer (General) -----
-# Boton para imprimir y descargar en formato excel
-# Que se pueda ver la hora de envio del formulario y que la persona vio la ficha
-# Crear Boton de 3 lineas para aparecer y esconder Inicio y Formulario
-# Crear Pagina Historial de Formularios
-# Crear Pagina Historial de Acciones (Login, Envio de Formularios)
-# Crear Pagina Menu para el Paramedico 
-# Crear Pagina Menu para el Medico
-# Notificacion de Nuevos Formularios
-# Tic de Formulario Visto
-# Pagina para el Listado del formulario o para ver el formulario
-# Boton Logout
-# Boton Ver Perfil y Pagina del perfil de Usuario
-# Poner Diabetes y Hypertension como opciones (Comorbilidades mas comunes)
-# Funciona para Encriptar Contraseñas
-# Avisos de Error de Envio

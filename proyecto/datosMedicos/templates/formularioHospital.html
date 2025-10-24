@@ -62,7 +62,7 @@
                             <label class="input-label">Previsión</label>
                             <div class="radio-group">
                                 <div class="radio-item">
-                                    <input type="radio" id="fonasa" name="prevision" value="fonasa" required>
+                                    <input type="radio" id="fonasa" name="prevision" value="fonasa">
                                     <label for="fonasa">Fonasa</label>
                                 </div>
                                 <div class="radio-item">
@@ -80,6 +80,7 @@
                             </div>
                         </div>
                         
+                        <!-- Genero -->
                         <div class="input-group">
                             <label class="input-label">Género</label>
                             <div class="radio-group">
@@ -149,24 +150,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Funcionalidad -->
-                        <div class="input-group">
-                            <label class="input-label">Funcionalidad</label>
-                            <input type="text" name="funcionalidad" placeholder="Ingrese funcionalidad" required>
-                        </div>
-                        
-                        <!-- Derivación -->
-                        <div class="input-group">
-                            <label class="input-label">Derivación</label>
-                            <input type="text" name="derivacion" placeholder="Ingrese derivación" required>
-                        </div>
-                        
-                        <!-- Evaluación -->
-                        <div class="input-group">
-                            <label class="input-label">Evaluación</label>
-                            <input type="text" name="evaluacion" placeholder="Ingrese evaluación" required>
-                        </div>
                         
                         <!-- Alergia -->
                         <div class="input-group">
@@ -174,22 +157,16 @@
                             <input type="text" name="Alergia" placeholder="Ingrese alergias">
                         </div>
                         
-                        <!-- Motivo de Consulta -->
-                        <div class="input-group">
-                            <label class="input-label">Motivo de Consulta</label>
-                            <input type="text" name="MotivoConsulta" placeholder="Ingrese motivo de consulta">
-                        </div>
-                        
                         <!-- Frecuencia Cardiaca -->
                         <div class="input-group">
-                            <label class="input-label">Frecuencia Cardiaca</label>
-                            <input type="number" name="frecuenciaC" placeholder="Ingrese frecuencia cardiaca">
+                            <label class="input-label">Frecuencia Cardíaca</label>
+                            <input type="text" name="frecuenciaC" id="frecuenciaC" placeholder="70-100" maxlength="7" required>
                         </div>
                         
                         <!-- Temperatura -->
                         <div class="input-group">
                             <label class="input-label">Temperatura</label>
-                            <input type="text" name="temperatura" id="temperatura" placeholder="36°C" class="temperature-input" required>
+                            <input type="text" name="temperatura" id="temperatura" placeholder="36°C" required>
                         </div>
                                                 
                         <!-- Observaciones -->
@@ -263,5 +240,41 @@
             });
     </script>
 
+    <script>
+        document.getElementById('frecuenciaC').addEventListener('input', function(e) {
+            let value = this.value.replace(/[^0-9-]/g, '');
+            
+            // Formato automático
+            if (value.length === 4 && !value.includes('-')) {
+                value = value.slice(0, 3) + '-' + value.slice(3);
+            }
+            
+            // Limitar longitud
+            if (value.length > 7) value = value.slice(0, 7);
+            
+            this.value = value;
+            
+            // Validación
+            const parts = value.split('-');
+            const min = parseInt(parts[0] || 0);
+            const max = parseInt(parts[1] || 0);
+            
+            const minValid = min >= 0 && min <= 200;
+            const maxValid = max >= 0 && max <= 200;
+            const rangeValid = !parts[1] || min <= max;
+            
+            const isValid = minValid && maxValid && rangeValid;
+            
+            this.style.borderColor = isValid ? '#d9d9d9' : 'red';
+            this.style.backgroundColor = isValid ? 'white' : '#fff5f5';
+            
+            if (!isValid && value.includes('-')) {
+                this.title = "Rango inválido: El primer valor debe ser menor o igual al segundo (0-200)";
+            } else {
+                this.title = "";
+            }
+        });
+
+    </script>
 </body>
 </html>
