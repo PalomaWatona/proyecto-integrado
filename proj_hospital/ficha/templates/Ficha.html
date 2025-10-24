@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha #{{ ficha.id }} - Hospital Rancagua</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ficha.css' %}">
+</head>
+<body>
+    <nav class="navb">
+        <a class="logohospital" href="/menu/"><img src="{% static 'img/logo.png' %}" class="logo"></a>
+        <div class="usuario-info">
+            <span class="usuario-nombre"> {{ usuario.nombre }} </span>
+            <a href="/logout/" class="usuario-cerrarsesion">Cerrar sesión</a>
+        </div>
+    </nav>
+    <main>
+        <div class="maincard">
+            <label class="label-title">Ficha</label>
+            <div class="cardficha">
+                ID de ficha: {{ ficha.id }} <br/>
+                Fecha de creación: {{ ficha.fechacreacion }} <br/>
+                Rut del paramedico: {{ ficha.rutparamedico }} <br/><br/>
+                Nombre: {{ ficha.nombrepaciente }} {{ ficha.apellidopaciente }}
+                Apellido: {{ ficha.apellidopaciente }} <br/>
+                Rut: {{ ficha.rutpaciente }} <br/>
+                Edad: {{ ficha.edad }} <br/>
+                Género: {{ ficha.genero }} <br/>
+                Teléfono: {{ ficha.telefono }} <br/><br/>
+                Motivo de consulta: {{ ficha.motivoconsulta }} <br/>
+                Comorbilidades: {{ ficha.comorbilidades }} <br/>
+                Alergias: {{ ficha.alergias }} <br/>
+                Frecuencia Cardiaca: {{ ficha.frecardiaca }}lpm <br/>
+                Temperatura: {{ ficha.temperatura }} °C <br/>
+                Presión Arterial: {{ ficha.presionarterial }} mmHg <br/>
+                Tipo de Sangre: {{ ficha.tiposangre }} <br/><br/>
+                Observaciones: {{ ficha.observaciones }} <br/>
+
+            </div>
+
+        </div>
+    </main>
+
+    
+</body>
+</html>

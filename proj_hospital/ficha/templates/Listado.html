@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de fichas - Hospital Rancagua</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/listado.css' %}">
+</head>
+<body>
+    <nav class="navb">
+        <a class="logohospital" href="/menu/"><img src="{% static 'img/logo.png' %}" class="logo"></a>
+        <div class="usuario-info">
+            <span class="usuario-nombre"> {{ usuario.nombre }} </span>
+            <a href="/logout/" class="usuario-cerrarsesion">Cerrar sesión</a>
+        </div>
+    </nav>
+    <main>
+        <div class="maincard">
+            <label class="label-title">Listado de fichas</label>
+            {% if fichas %}
+                <table class="table">
+                    <tr >
+                        <th>ID de ficha</th>
+                        <th>Nombre Completo</th>
+                        <th>Genero</th>
+                        <th>Edad</th>
+                        <th>Motivo de consulta</th>
+                        <th>Fecha</th>
+                        <th>Botones</th>
+                    </tr>
+
+                {% for x in fichas %}    
+                    <tr class="align-middle">
+                        <td>{{ x.id }}</td>
+                        <td>{{ x.nombrepaciente }} {{ x.apellidopaciente }}</td>
+                        <td>{{ x.genero }}</td>
+                        <td>{{ x.edad }}</td>
+                        <td>{{ x.motivoconsulta }}</td>
+                        <td>{{ x.fechacreacion }}</td>
+                        <td class="tdbuttons">
+                            <button type="button" class= "tdbutton" title="Eliminar ficha" onClick="botonEliminar({{ x.id }})">
+                                <img src="{% static 'svg/delete.svg' %}" class="tdbutton-icon" alt="Eliminar">
+                            </button>
+                            <button type="button" class= "tdbutton" title="Ver ficha" onClick="botonVerFicha({{ x.id }})">
+                                <img src="{% static 'svg/read.svg' %}" class="tdbutton-icon" alt="Ver Ficha">
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+                    
+                </table>
+                <br/>
+            
+            {% else %}
+
+                <label class="txtnotfound">No hay registros de fichas para mostrar</label>
+
+            {% endif %}
+        </div>
+    </main>
+
+
+<script src="{% static 'js/listado.js' %}"></script>
+</body>
+</html>
