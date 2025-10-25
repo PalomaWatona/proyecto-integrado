@@ -23,20 +23,23 @@
             <div class="cardficha">
                 ID de ficha: {{ ficha.id }} <br/>
                 Fecha de creación: {{ ficha.fechacreacion }} <br/>
-                Rut del paramedico: {{ ficha.rutparamedico }} <br/><br/>
-                Nombre: {{ ficha.nombrepaciente }} {{ ficha.apellidopaciente }}
-                Apellido: {{ ficha.apellidopaciente }} <br/>
-                Rut: {{ ficha.rutpaciente }} <br/>
+                Rut del paramedico: {{ ficha.rutparamedico }} <br/>
+                <br/>
+                Nombre: {% if ficha.nombrepaciente %} {{ ficha.nombrepaciente }} {% else %} n/a {% endif %} <br/>
+                Apellido: {% if ficha.apellidopaciente %} {{ ficha.apellidopaciente }} {% else %} n/a {% endif %} <br/>
+                Rut: {% if ficha.rutpaciente %} {{ ficha.rutpaciente }} {% else %} n/a {% endif %} <br/>
                 Edad: {{ ficha.edad }} <br/>
                 Género: {{ ficha.genero }} <br/>
-                Teléfono: {{ ficha.telefono }} <br/><br/>
+                Teléfono: {% if ficha.telefono %} {{ ficha.telefono }} {% else %} n/a {% endif %} <br/>
+                <br/>
                 Motivo de consulta: {{ ficha.motivoconsulta }} <br/>
-                Comorbilidades: {{ ficha.comorbilidades }} <br/>
-                Alergias: {{ ficha.alergias }} <br/>
-                Frecuencia Cardiaca: {{ ficha.frecardiaca }}lpm <br/>
-                Temperatura: {{ ficha.temperatura }} °C <br/>
-                Presión Arterial: {{ ficha.presionarterial }} mmHg <br/>
-                Tipo de Sangre: {{ ficha.tiposangre }} <br/><br/>
+                {% if ficha.comorbilidades %} Comorbilidades: {{ ficha.comorbilidades }} <br/>{% endif %} 
+                {% if ficha.alergias %}Alergias: {{ ficha.alergias }} <br/>{% endif %} 
+                {% if ficha.frecardiaca %} Frecuencia Cardiaca: {{ ficha.frecardiaca }}lpm <br/>{% endif %} 
+                {% if ficha.temperatura %} Temperatura: {{ ficha.temperatura }}°C <br/>{% endif %} 
+                {% if ficha.presionarterial %} Presión Arterial: {{ ficha.presionarterial }}mmHg <br/>{% endif %} 
+                {% if ficha.tiposangre %} Tipo de Sangre: {{ ficha.tiposangre }} <br/>{% endif %}
+                <br/>
                 Observaciones: {{ ficha.observaciones }} <br/>
 
             </div>

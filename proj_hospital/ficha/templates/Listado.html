@@ -35,7 +35,7 @@
                 {% for x in fichas %}    
                     <tr class="align-middle">
                         <td>{{ x.id }}</td>
-                        <td>{{ x.nombrepaciente }} {{ x.apellidopaciente }}</td>
+                        <td>{% if  not x.nombrepaciente and not x.apellidopaciente %} n/a {% else %} {% if x.nombrepaciente %} {{ x.nombrepaciente }} {% else %} -- {% endif %} {{ x.apellidopaciente }} {% endif %}</td>
                         <td>{{ x.genero }}</td>
                         <td>{{ x.edad }}</td>
                         <td>{{ x.motivoconsulta }}</td>
@@ -49,6 +49,7 @@
                             </button>
                         </td>
                     </tr>
+                    
                 {% endfor %}
                     
                 </table>
